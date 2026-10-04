@@ -7,6 +7,10 @@ public class UserLogin extends Event{
 
    private ConnectionDetails connectionDetails; //Embedding
 
+    public UserLogin(){
+        super();
+    }
+
     public UserLogin(Instant timestamps, EventType eventType, String userId, ConnectionDetails connectionDetails){
         super(timestamps,eventType,userId);
         this.connectionDetails=connectionDetails;
