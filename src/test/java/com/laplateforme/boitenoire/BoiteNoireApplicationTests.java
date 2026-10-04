@@ -9,5 +9,4 @@ class BoiteNoireApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
