@@ -1,5 +1,6 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.repository;
 
+import com.laplateforme.boitenoire.model.Event;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 //Event repository

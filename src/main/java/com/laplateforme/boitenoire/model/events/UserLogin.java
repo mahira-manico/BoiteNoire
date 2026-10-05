@@ -1,9 +1,13 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.model.events;
+
+import com.laplateforme.boitenoire.model.details.ConnectionDetails;
+import com.laplateforme.boitenoire.model.Event;
+import com.laplateforme.boitenoire.model.EventType;
 
 import java.time.Instant;
 
 //under class of parent class Event
-public class UserLogin extends Event{
+public class UserLogin extends Event {
 
    private ConnectionDetails connectionDetails; //Embedding
 

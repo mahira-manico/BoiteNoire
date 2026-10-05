@@ -1,4 +1,4 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.model.details;
 
 //Under class of ApiCall
 public class ApiDetails {

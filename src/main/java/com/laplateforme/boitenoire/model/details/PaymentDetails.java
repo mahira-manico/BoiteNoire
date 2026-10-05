@@ -1,4 +1,6 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.model.details;
+
+import com.laplateforme.boitenoire.model.events.Status;
 
 //Under class of class Payment
 public class PaymentDetails {

@@ -1,4 +1,8 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.model.events;
+
+import com.laplateforme.boitenoire.model.details.ErrorsDetails;
+import com.laplateforme.boitenoire.model.Event;
+import com.laplateforme.boitenoire.model.EventType;
 
 import java.time.Instant;
 

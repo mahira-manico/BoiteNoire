@@ -1,18 +1,23 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.model.events;
+
+import com.laplateforme.boitenoire.model.details.ApiDetails;
+import com.laplateforme.boitenoire.model.Event;
+import com.laplateforme.boitenoire.model.EventType;
 
 import java.time.Instant;
 
-//under class payment inheriting of parent class Event
-public class Payment extends Event{
+// Under class of parent class Event
+public class ApiCall extends Event {
 
-    private PaymentDetails paymentDetails;
+    private final ApiDetails apiDetails;
 
-    public Payment(Instant timestamps, EventType eventType, String userId, PaymentDetails paymentDetails){
-        super(timestamps, eventType, userId); //inheritance
-        this.paymentDetails=paymentDetails;
+    public ApiCall(Instant timestamps, EventType eventType, String userId, ApiDetails apiDetails) {
+        super(timestamps, eventType, userId);
+        this.apiDetails=apiDetails;
+
     }
 
-    //getters and setters
+    // Getters and Setters
     @Override
     public Instant getTimestamps() {
         return super.getTimestamps();
@@ -43,11 +48,7 @@ public class Payment extends Event{
         super.setUserId(userId);
     }
 
-    public PaymentDetails getPaymentDetails() {
-        return paymentDetails;
-    }
-
-    public void setPaymentDetails(PaymentDetails paymentDetails) {
-        this.paymentDetails = paymentDetails;
+    public ApiDetails getApiDetails() {
+        return apiDetails;
     }
 }

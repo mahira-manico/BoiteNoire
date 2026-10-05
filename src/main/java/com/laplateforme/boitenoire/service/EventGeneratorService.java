@@ -6,7 +6,13 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
-import com.laplateforme.boitenoire.model.Error;
+import com.laplateforme.boitenoire.model.details.ApiDetails;
+import com.laplateforme.boitenoire.model.details.ConnectionDetails;
+import com.laplateforme.boitenoire.model.details.ErrorsDetails;
+import com.laplateforme.boitenoire.model.details.PaymentDetails;
+import com.laplateforme.boitenoire.model.events.*;
+import com.laplateforme.boitenoire.model.events.Error;
+import com.laplateforme.boitenoire.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

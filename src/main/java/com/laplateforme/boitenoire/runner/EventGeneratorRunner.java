@@ -1,4 +1,4 @@
-package com.laplateforme.boitenoire;
+package com.laplateforme.boitenoire.runner;
 
 import com.laplateforme.boitenoire.service.EventGeneratorService;
 import org.springframework.boot.CommandLineRunner;

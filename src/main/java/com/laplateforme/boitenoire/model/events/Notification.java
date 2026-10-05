@@ -1,16 +1,18 @@
-package com.laplateforme.boitenoire.model;
+package com.laplateforme.boitenoire.model.events;
+
+import com.laplateforme.boitenoire.model.Event;
+import com.laplateforme.boitenoire.model.EventType;
 
 import java.time.Instant;
 
 // Under class of parent class Event
-public class ApiCall extends Event {
+public class Notification extends Event {
 
-    private final ApiDetails apiDetails;
+    private String channelId;
 
-    public ApiCall(Instant timestamps, EventType eventType, String userId, ApiDetails apiDetails) {
+    public Notification(Instant timestamps, EventType eventType, String userId, String channelId) {
         super(timestamps, eventType, userId);
-        this.apiDetails=apiDetails;
-
+        this.channelId = channelId;
     }
 
     // Getters and Setters
@@ -29,6 +31,10 @@ public class ApiCall extends Event {
         return super.getUserId();
     }
 
+    public String getChannelId() {
+        return channelId;
+    }
+
     @Override
     public void setTimestamps(Instant timestamps) {
         super.setTimestamps(timestamps);
@@ -44,7 +50,7 @@ public class ApiCall extends Event {
         super.setUserId(userId);
     }
 
-    public ApiDetails getApiDetails() {
-        return apiDetails;
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
     }
 }
