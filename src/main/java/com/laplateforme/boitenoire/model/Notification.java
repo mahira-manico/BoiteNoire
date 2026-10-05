@@ -13,7 +13,6 @@ public class Notification extends Event {
     }
 
     // Getters and Setters
-
     @Override
     public Instant getTimestamps() {
         return super.getTimestamps();

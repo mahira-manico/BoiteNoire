@@ -4,13 +4,12 @@ import java.time.Instant;
 
 //under class payment inheriting of parent class Event
 public class Payment extends Event{
-    private double amount;
-    private Status status;
 
-    public Payment(Instant timestamps, EventType eventType, String userId, double amount,Status status){
+    private PaymentDetails paymentDetails;
+
+    public Payment(Instant timestamps, EventType eventType, String userId, PaymentDetails paymentDetails){
         super(timestamps, eventType, userId); //inheritance
-        this.amount=amount;
-        this.status=status;
+        this.paymentDetails=paymentDetails;
     }
 
     //getters and setters
@@ -29,14 +28,6 @@ public class Payment extends Event{
         return super.getUserId();
     }
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
     @Override
     public void setTimestamps(Instant timestamps) {
         super.setTimestamps(timestamps);
@@ -52,11 +43,11 @@ public class Payment extends Event{
         super.setUserId(userId);
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public PaymentDetails getPaymentDetails() {
+        return paymentDetails;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setPaymentDetails(PaymentDetails paymentDetails) {
+        this.paymentDetails = paymentDetails;
     }
 }

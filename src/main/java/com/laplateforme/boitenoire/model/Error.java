@@ -5,20 +5,14 @@ import java.time.Instant;
 // Under class of parent class Event
 public class Error extends Event {
 
-    private String errorType;
-    private String errorMessage;
+    private final ErrorsDetails errorsDetails;
 
-    public Error(Instant timestamps, EventType eventType, String userId,
-                String errorType, String errorMessage) {
-
+    public Error(Instant timestamps, EventType eventType, String userId, ErrorsDetails errorsDetails) {
         super(timestamps, eventType, userId);
-
-        this.errorType = errorType;
-        this.errorMessage = errorMessage;
+        this.errorsDetails = errorsDetails;
     }
 
     // Getters and Setters
-
     @Override
     public Instant getTimestamps() {
         return super.getTimestamps();
@@ -32,14 +26,6 @@ public class Error extends Event {
     @Override
     public String getUserId() {
         return super.getUserId();
-    }
-
-    public String getErrorType() {
-        return errorType;
-    }
-
-    public String getErrorMessage() {
-        return errorMessage;
     }
 
     @Override
@@ -57,11 +43,8 @@ public class Error extends Event {
         super.setUserId(userId);
     }
 
-    public void setErrorType(String errorType) {
-        this.errorType = errorType;
-    }
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+    public ErrorsDetails getErrorsDetails() {
+        return errorsDetails;
     }
 }
+

@@ -5,13 +5,15 @@ import java.time.Instant;
 //under class of parent class Event
 public class UserLogin extends Event{
 
-    private final String ipAddress;
-    private final String device;
+   private ConnectionDetails connectionDetails; //Embedding
 
-    public UserLogin(Instant timestamps, EventType eventType, String userId, String ipAddress, String device){
+    public UserLogin(){
+        super();
+    }
+
+    public UserLogin(Instant timestamps, EventType eventType, String userId, ConnectionDetails connectionDetails){
         super(timestamps,eventType,userId);
-        this.ipAddress=ipAddress;
-        this.device=device;
+        this.connectionDetails=connectionDetails;
     }
 
     //Getters and Setters
@@ -30,12 +32,12 @@ public class UserLogin extends Event{
         return super.getUserId();
     }
 
-    public String getIpAddress() {
-        return ipAddress;
+    public ConnectionDetails getConnectionDetails() {
+        return connectionDetails;
     }
 
-    public String getDevice() {
-        return device;
+    public void setConnectionDetails(ConnectionDetails connectionDetails) {
+        this.connectionDetails = connectionDetails;
     }
 
     @Override

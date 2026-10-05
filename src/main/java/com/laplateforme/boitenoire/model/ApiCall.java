@@ -5,16 +5,12 @@ import java.time.Instant;
 // Under class of parent class Event
 public class ApiCall extends Event {
 
-    private String httpMethod;
-    private String endpoint;
-    private Integer responseTimeMs;
+    private final ApiDetails apiDetails;
 
-    public ApiCall(Instant timestamps, EventType eventType, String userId,
-                String httpMethod, String endpoint, Integer responseTimeMs) {
+    public ApiCall(Instant timestamps, EventType eventType, String userId, ApiDetails apiDetails) {
         super(timestamps, eventType, userId);
-        this.httpMethod = httpMethod;
-        this.endpoint = endpoint;
-        this.responseTimeMs = responseTimeMs;
+        this.apiDetails=apiDetails;
+
     }
 
     // Getters and Setters
@@ -33,18 +29,6 @@ public class ApiCall extends Event {
         return super.getUserId();
     }
 
-    public String getHttpMethod() {
-        return httpMethod;
-    }
-
-    public String getEndpoint() {
-        return endpoint;
-    }
-
-    public Integer getResponseTimeMs() {
-        return responseTimeMs;
-    }
-
     @Override
     public void setTimestamps(Instant timestamps) {
         super.setTimestamps(timestamps);
@@ -60,15 +44,7 @@ public class ApiCall extends Event {
         super.setUserId(userId);
     }
 
-    public void setHttpMethod(String httpMethod) {
-        this.httpMethod = httpMethod;
-    }
-
-    public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
-    }
-
-    public void setResponseTimeMs(Integer responseTimeMs) {
-        this.responseTimeMs = responseTimeMs;
+    public ApiDetails getApiDetails() {
+        return apiDetails;
     }
 }
