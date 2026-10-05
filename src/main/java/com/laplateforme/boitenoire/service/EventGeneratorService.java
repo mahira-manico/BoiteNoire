@@ -1,18 +1,12 @@
 package com.laplateforme.boitenoire.service;
 
-import com.laplateforme.boitenoire.model.Event;
-import com.laplateforme.boitenoire.model.EventRepository;
-import com.laplateforme.boitenoire.model.EventType;
-import com.laplateforme.boitenoire.model.UserLogin;
-import com.laplateforme.boitenoire.model.Status;
-import com.laplateforme.boitenoire.model.Payment;
-import com.laplateforme.boitenoire.model.ApiCall;
-import com.laplateforme.boitenoire.model.Notification;
-import com.laplateforme.boitenoire.model.Error;
+import com.laplateforme.boitenoire.model.*;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
+
+import com.laplateforme.boitenoire.model.Error;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -110,17 +104,18 @@ public class EventGeneratorService {
     switch (eventType) {
 
         case USER_LOGIN:
-              // create UserLogin event 
+              // create UserLogin event
 
             String ipAddress = "192.168.1." + random.nextInt(255);
             String device = "Chrome";
+            ConnectionDetails connectionDetails=new ConnectionDetails(ipAddress,device);
+
 
             return new UserLogin(
                     timestamp,
                     eventType,
                     userId,
-                    ipAddress,
-                    device
+                    connectionDetails
             );
         
         
@@ -131,13 +126,13 @@ public class EventGeneratorService {
             Status[] statuses = Status.values();
             int randomStatusIndex = random.nextInt(statuses.length);
             Status status =statuses[randomStatusIndex];
+            PaymentDetails paymentDetails=new PaymentDetails(amount,status);
 
             return new Payment(
                     timestamp,
                     eventType,
                     userId,
-                    amount,
-                    status
+                    paymentDetails
             );
 
         case API_CALL:
@@ -154,14 +149,14 @@ public class EventGeneratorService {
 
             Integer responseTimeMs = 50 + random.nextInt(951);
 
+            ApiDetails apiDetails=new ApiDetails(httpMethod,endpoint,responseTimeMs);
+
 
             return new ApiCall(
                     timestamp,
                     eventType,
                     userId,
-                    httpMethod,
-                    endpoint,
-                    responseTimeMs
+                    apiDetails
             );
 
         case NOTIFICATION:
@@ -203,14 +198,13 @@ public class EventGeneratorService {
             };
 
             String errorMessage = errorMessages[random.nextInt(errorMessages.length)];
-
+            ErrorsDetails errorsDetails=new ErrorsDetails(errorType,errorMessage);
 
             return new Error(
                     timestamp,
                     eventType,
                     userId,
-                    errorType,
-                    errorMessage
+                   errorsDetails
             );
 
         default:

@@ -1,5 +1,6 @@
 package com.laplateforme.boitenoire.model;
 
+//Under class of class UserLogin
 public class ConnectionDetails {
 
     private String ipAddress;
@@ -12,6 +13,7 @@ public class ConnectionDetails {
         this.device=device;
     }
 
+    //Getters and Setters
     public String getIpAddress() {
         return ipAddress;
     }

@@ -17,7 +17,6 @@ public class Event {
     public Event(){} //empty constructor for Spring Data
 
     //Constructor
-    
     public Event(Instant timestamps, EventType eventType, String userId){
         this.timestamps=timestamps;
         this.eventType=eventType;

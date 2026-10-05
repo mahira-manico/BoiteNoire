@@ -1,5 +1,6 @@
 package com.laplateforme.boitenoire.model;
 
+//Under class of class Payment
 public class PaymentDetails {
 
     private double amount;
@@ -12,6 +13,7 @@ public class PaymentDetails {
         this.status=status;
     }
 
+    //Getters and Setters
     public double getAmount() {
         return amount;
     }
