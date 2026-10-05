@@ -135,9 +135,9 @@ Supporting documents live in `docs/`:
 
 | # | Deliverable | Location                                      | Status |
 |---|---|-----------------------------------------------|---|
-| 1 | Decision note (ADR), relational vs. documentary | `docs/adr-choix-modele.md`                    | Done |
-| 2 | Document model schema | `docs/schema-modele.png` (or `.md`)           | Done |
-| 3 | Event generator (≥ 100,000 docs) | `src/main/java/runner/EventGeneratorRunner.java` | Done |
+| 1 | Decision note (ADR), relational vs. documentary | `docs/ADR.md`                    | Done |
+| 2 | Document model schema | `docs/schema.md`)           | Done |
+| 3 | Event generator ( 100,000 docs) | `src/main/java/runner/EventGeneratorRunner.java` | Done |
 | 4 | Analytics components (aggregation pipelines) | `src/main/java/service/AnalyticsService.java` | Done |
 | 5 | Optimization report & explain | `docs/performance.md`                         | Done |
 | 6 | README with run instructions | `README.md`                                   | Done |
